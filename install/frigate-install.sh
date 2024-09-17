@@ -7,7 +7,6 @@
 # https://github.com/tteck/Proxmox/raw/main/LICENSE
 
 source /dev/stdin <<<"$FUNCTIONS_FILE_PATH"
-color
 verb_ip6
 catch_errors
 setting_up_container
