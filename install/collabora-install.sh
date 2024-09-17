@@ -2,7 +2,7 @@
 
 # Copyright (c) 2021-2024 tteck
 # Author: tteck (tteckster)
-# Co-Author: remz1337
+# Co-Author: nmolenaar
 # License: MIT
 # https://github.com/tteck/Proxmox/raw/main/LICENSE
 

@@ -1,8 +1,8 @@
 #!/usr/bin/env bash
-source <(curl -s https://raw.githubusercontent.com/remz1337/Proxmox/remz/misc/build.func)
+source <(curl -s https://raw.githubusercontent.com/nmolenaar/Proxmox/remz/misc/build.func)
 # Copyright (c) 2021-2024 tteck
 # Author: tteck (tteckster)
-# Co-Author: remz1337
+# Co-Author: nmolenaar
 # License: MIT
 # https://github.com/tteck/Proxmox/raw/main/LICENSE
 
@@ -60,11 +60,11 @@ function update_script() {
     exit
   fi
   msg_info "Updating $APP LXC"
-  RELEASE=$(curl -s https://api.github.com/repos/remz1337/SAQLottery/releases/latest |
+  RELEASE=$(curl -s https://api.github.com/repos/nmolenaar/SAQLottery/releases/latest |
     grep "tag_name" |
     awk '{print substr($2, 2, length($2)-3) }')
   cd /tmp
-  curl -o SAQLottery.tar.gz -fsSLO https://api.github.com/repos/remz1337/SAQLottery/tarball/$RELEASE
+  curl -o SAQLottery.tar.gz -fsSLO https://api.github.com/repos/nmolenaar/SAQLottery/tarball/$RELEASE
   tar -xzf SAQLottery.tar.gz -C /opt/SAQLottery/ --strip-components 1
   rm SAQLottery.tar.gz
   msg_ok "Updated $APP LXC"

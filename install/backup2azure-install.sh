@@ -2,7 +2,7 @@
 
 # Copyright (c) 2021-2024 tteck
 # Author: tteck (tteckster)
-# Co-Author: remz1337
+# Co-Author: nmolenaar
 # License: MIT
 # https://github.com/tteck/Proxmox/raw/main/LICENSE
 
@@ -20,14 +20,14 @@ $STD apt-get install -y sudo
 $STD apt-get install -y mc
 msg_ok "Installed Dependencies"
 
-RELEASE=$(curl -s https://api.github.com/repos/remz1337/Backup2Azure/releases/latest |
+RELEASE=$(curl -s https://api.github.com/repos/nmolenaar/Backup2Azure/releases/latest |
   grep "tag_name" |
   awk '{print substr($2, 2, length($2)-3) }')
 
 msg_info "Downloading Backup2Azure ${RELEASE}"
 mkdir -p /opt/Backup2Azure
 cd /tmp
-curl -o Backup2Azure.tar.gz -fsSLO https://api.github.com/repos/remz1337/Backup2Azure/tarball/$RELEASE
+curl -o Backup2Azure.tar.gz -fsSLO https://api.github.com/repos/nmolenaar/Backup2Azure/tarball/$RELEASE
 tar -xzf Backup2Azure.tar.gz -C /opt/Backup2Azure/ --strip-components 1
 rm Backup2Azure.tar.gz
 cd -

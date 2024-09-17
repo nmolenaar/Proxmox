@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
-source <(curl -s https://raw.githubusercontent.com/remz1337/Proxmox/remz/misc/nvidia.func)
+source <(curl -s https://raw.githubusercontent.com/nmolenaar/Proxmox/remz/misc/nvidia.func)
 # Copyright (c) 2021-2024 tteck
-# Author: remz1337
+# Author: nmolenaar
 # Co-Author: tteck (tteckster)
 # License: MIT
 # https://github.com/tteck/Proxmox/raw/main/LICENSE
@@ -563,7 +563,7 @@ done
 
 msg_info "Creating a Windows 11 VM with GPU passthrough"
 
-source <(curl -s https://raw.githubusercontent.com/remz1337/Proxmox/remz/misc/nvidia.func)
+source <(curl -s https://raw.githubusercontent.com/nmolenaar/Proxmox/remz/misc/nvidia.func)
 pci_num=$(select_nvidia_gpu_vm)
 
 #pvesm alloc $STORAGE $VMID $DISK0 4M 1>&/dev/null
@@ -583,7 +583,7 @@ qm create $VMID -agent 1${MACHINE} -bios ovmf${CPU_TYPE} -cores $CORE_COUNT -cpu
 
   # Windows 11 VM
 
-  <a href='https://ko-fi.com/remz1337'><img src='https://img.shields.io/badge/&#x2615;-Buy me a coffee-blue' /></a>
+  <a href='https://ko-fi.com/nmolenaar'><img src='https://img.shields.io/badge/&#x2615;-Buy me a coffee-blue' /></a>
   </div>" >/dev/null
 msg_ok "Created a Windows 11 VM ${CL}${BL}(${HN})"
 if [ "$START_VM" == "yes" ]; then

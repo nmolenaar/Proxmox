@@ -1,8 +1,8 @@
 #!/usr/bin/env bash
-source <(curl -s https://raw.githubusercontent.com/remz1337/Proxmox/remz/misc/build.func)
+source <(curl -s https://raw.githubusercontent.com/nmolenaar/Proxmox/remz/misc/build.func)
 # Copyright (c) 2021-2024 tteck
 # Author: tteck (tteckster)
-# Co-Author: remz1337
+# Co-Author: nmolenaar
 # License: MIT
 # https://github.com/tteck/Proxmox/raw/main/LICENSE
 
@@ -61,11 +61,11 @@ function update_script() {
     exit
   fi
   msg_info "Updating $APP LXC"
-  RELEASE=$(curl -s https://api.github.com/repos/remz1337/Backup2Azure/releases/latest |
+  RELEASE=$(curl -s https://api.github.com/repos/nmolenaar/Backup2Azure/releases/latest |
     grep "tag_name" |
     awk '{print substr($2, 2, length($2)-3) }')
   cd /tmp
-  curl -o Backup2Azure.tar.gz -fsSLO https://api.github.com/repos/remz1337/Backup2Azure/tarball/$RELEASE
+  curl -o Backup2Azure.tar.gz -fsSLO https://api.github.com/repos/nmolenaar/Backup2Azure/tarball/$RELEASE
   tar -xzf Backup2Azure.tar.gz -C /opt/Backup2Azure/ --strip-components 1
   rm Backup2Azure.tar.gz
   msg_ok "Updated $APP LXC"
